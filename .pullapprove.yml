@@ -1,0 +1,36 @@
+version: 2
+
+always_pending:
+  title_regex: 'WIP'
+  explanation: 'Work in progress...'
+
+group_defaults:
+  approve_by_comment:
+    enabled: true
+    approve_regex: '[aA]pproved\.'
+  reject_value: -1
+  reset_on_push:
+    enabled: true
+
+groups:
+  developers:
+    required: 1
+
+    users:
+      - MatthewHartstonge
+      - pauln
+
+    conditions:
+      files:
+        exclude:  # don't need to review if the PR only changes these files
+          - "Readme.md"
+          - ".gitignore"
+
+  pullapprove-admins:
+    conditions:
+      files:
+        - ".pullapprove.yml"  # great for ensuring pullapprove settings are approved
+    required: 1
+    users:
+      - MatthewHartstonge
+      - pauln
