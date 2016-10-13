@@ -1,7 +1,7 @@
 FROM python:2-slim
 MAINTAINER Matthew Hartstonge <matt@mykro.co.nz>
 
-ENV DOCKER_VERSION="1.12.2-0~jessie"
+ENV DOCKER_VERSION="1.10.2-0~jessie"
 # Valid versions
 # 1.12.2-0~jessie
 # 1.12.1-0~jessie
